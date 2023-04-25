@@ -35,7 +35,8 @@ The requirments,
 
 7- Run these commands
 
-# Write a value "hello world!" to the key "foo" by Client
+# Write a value "hello world!" to the key "foo" by Client:
+
 curl -i -X PUT 'http://localhost:5000/foo' -H 'Content-Type: application/octet-stream' --data-binary 'hello world!'
 
 # Fetch the value of "foo" from client
