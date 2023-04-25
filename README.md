@@ -13,8 +13,10 @@ The requirments,
 
   $ pip install Flask
   
-4- run this command in main directory of python code where you copy/pate main.py file__
+4- run this command in main directory of python code where you copy/pate main.py file
+
   $ flask --app main.py run
+  
 5-leave the terminal open, the output should be like below, means server is listening on port 5000 on your localhost
 
  * Serving Flask app 'main.py'
