@@ -1,6 +1,6 @@
 # REST_Keypair_python
 
-This is a HTTP_Server request , which used 
+This is a HTTP_Server request , which used REST Api
 
 This code is a server side that is running on  local machine (host='localhost', port=3000)
 
@@ -23,6 +23,8 @@ HTTP endpoints:
 * This code try to follow try-except blocks to handle file I/O errors and respond with appropriate error codes
 
 * This code also used file locking to prevent conflict when multiple clients try to access the same key-value pair at the same time
+
+* The logging is also in the code to report the errors in a seperate file "error.log" in a serverside storage
 
 
 --The requirments,
