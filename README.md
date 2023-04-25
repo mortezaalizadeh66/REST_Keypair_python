@@ -27,7 +27,7 @@ HTTP endpoints:
 * The logging is also in the code to report the errors in a seperate file "error.log" in a serverside storage
 
 
---The requirments,
+--The requirments (having knowledge of Error handling on Flask Abort() ),
 
 1- install python , curl on your OS
 
