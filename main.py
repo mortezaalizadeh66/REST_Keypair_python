@@ -1,9 +1,18 @@
 from flask import Flask, request, abort
 import os
 import fcntl
-
+import logging
+from logging.handlers import RotatingFileHandler
+import datetime
 
 app = Flask(__name__)
+
+# Set up logging %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+log_formatter = logging.Formatter('%(asctime)s %(levelname)s %(funcName)s(%(lineno)d) %(message)s')
+log_handler = RotatingFileHandler('error.log', maxBytes=10000, backupCount=1)
+log_handler.setLevel(logging.ERROR)
+log_handler.setFormatter(log_formatter)
+app.logger.addHandler(log_handler)
 
 #Begin of PUT function %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 @app.route('/<string:key>', methods=['PUT'])
@@ -19,7 +28,8 @@ def put_value(key):
         with open(f'{key}.txt', 'wb') as f:
             fcntl.flock(f, fcntl.LOCK_EX)
             f.write(value)
-    except OSError:
+    except OSError as e:
+        app.logger.error(f'{e.__class__.__name__}: {str(e)} at {datetime.datetime.now()}')
         abort(500)
     # Return a 204 No Content response
     return '', 204
@@ -38,7 +48,8 @@ def get_value(key):
          with open(f'{key}.txt', 'rb') as f:
              fcntl.flock(f, fcntl.LOCK_SH)
              value = f.read()
-        except OSError:
+        except OSError as e:
+             app.logger.error(f'{e.__class__.__name__}: {str(e)} at {datetime.datetime.now()}')
              abort(500)
 
         # Return a 200 OK response with the value in the response body
@@ -56,7 +67,8 @@ def delete_value(key):
     # Delete the file
     try:
         os.remove(f'{key}.txt')
-    except OSError:
+    except OSError as e:
+        app.logger.error(f'{e.__class__.__name__}: {str(e)} at {datetime.datetime.now()}')
         abort(500)
 
     # Return a 204 No Content response
