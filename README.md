@@ -20,6 +20,7 @@ The requirments,
 5-leave the terminal open, the output should be like below, means server is listening on port 5000 on your localhost
 
   output:
+  
          Serving Flask app 'main.py'
          
          Debug mode: off
