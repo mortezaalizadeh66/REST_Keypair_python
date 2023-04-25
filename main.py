@@ -75,5 +75,6 @@ def delete_value(key):
     return '', 204
 #End of Remove function %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+#Fix the Host name and related port%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 if __name__ == '__main__':
     app.run(host='localhost', port=3000)
