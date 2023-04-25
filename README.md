@@ -1,14 +1,14 @@
 # REST_Keypair_python
 
-This code is a server side that is running on  local machine 127.0.0.1:5000
+This code is a server side that is running on  local machine 127.0.0.1:5000__
 
 
-The requirments,
-1- install python , curl on your OS \n
-2- install pip
-3- install Flask latest version by the help of pip  
+The requirments,__
+1- install python , curl on your OS__
+2- install pip__
+3- install Flask latest version by the help of pip  __
   $ pip install Flask
-4- run this command in main directory of python code where you copy/pate main.py file
+4- run this command in main directory of python code where you copy/pate main.py file__
   $ flask --app main.py run
 5-leave the terminal open, the output should be like below, means server is listening on port 5000 on your localhost
 
