@@ -4,7 +4,7 @@ This code is a server side that is running on  local machine 127.0.0.1:5000
 
 
 The requirments,
-1- install python , curl on your OS
+1- install python , curl on your OS \n
 2- install pip
 3- install Flask latest version by the help of pip  
   $ pip install Flask
